@@ -18,10 +18,20 @@
   
   <div class="box">
     <h2>Bayar DP Sekarang</h2>
-    <input type="text" placeholder="Nama Anda">
-    <input type="number" placeholder="Nominal DP">
-    <button onclick="alert('Silakan hubungi admin via WA')">Bayar via WA Admin</button>
+    <input type="text" id="nama" placeholder="Nama Anda">
+    <input type="number" id="nominal" placeholder="Nominal DP">
+    <button onclick="kirimWA()">Bayar via WA Admin</button>
   </div>
+
+<script>
+function kirimWA() {
+  let nama = document.getElementById('nama').value;
+  let nominal = document.getElementById('nominal').value;
+  let pesan = `Halo Admin PT Tri Tabarak Jaya%0A%0ANama: ${nama}%0ANominal DP: Rp ${nominal}`;
+  let noWA = "6285105371373"; // GANTI INI PAKE NO KAMU
+  window.open(`httpse/${noWA}?text=${pesan}`, '_blank');
+}
+</script>
 </body>
 </html>
 
