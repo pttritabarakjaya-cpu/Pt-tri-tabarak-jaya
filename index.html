@@ -2,35 +2,177 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>PT Tri Tabarak Jaya</title>
+  <title>PT TRI TABARAK JAYA - Perumahan Syariah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { background:#0a0a0a; color:white; font-family:Arial; text-align:center; padding:30px; }
-    h1 { color:#00ff88; }
-    .box { background:#1a1a1a; padding:20px; border-radius:12px; max-width:400px; margin:auto; }
-    input, button { width:90%; padding:12px; margin:10px 0; border-radius:8px; border:none; }
-    button { background:#00ff88; color:black; font-weight:bold; cursor:pointer; }
+    body { background:#0a0a0a; color:white; font-family:Arial; margin:0; padding:0; }
+    header { text-align:center; padding:30px 20px; background:linear-gradient(#001f3f, #0a0a0a); }
+    header img { width:80px; margin-bottom:10px; border-radius:10px; }
+    header h1 { color:#FFD700; margin:5px 0; font-size:24px; }
+    header p { color:#00ff88; margin:0; }
+    .banner { background:#4B0082; padding:15px; text-align:center; font-weight:bold; font-size:18px; }
+    .katalog { display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; padding:30px; }
+    .card { background:#1a1a1a; border-radius:12px; overflow:hidden; border:1px solid #333; transition:0.3s; }
+    .card:hover { border-color:#00ff88; }
+    .card img { width:100%; height:220px; object-fit:cover; }
+    .card-body { padding:15px; }
+    .card-body h2 { color:#00ff88; margin:0 0 5px 0; font-size:18px; }
+    .harga { color:#FFD700; font-weight:bold; font-size:16px; }
+    .btn { background:#00ff88; color:black; padding:12px; width:100%; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:10px; font-size:15px; }
+    .btn.pi { background:#4B0082; color:white; }
+    .detail { padding:30px; max-width:1000px; margin:auto; display:none; }
+    .galeri { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:15px 0; }
+    .galeri img { width:100%; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; margin:15px 0; }
+    table td { border:1px solid #333; padding:10px; }
+    table td:first-child { background:#1a1a1a; width:40%; }
+    .back { background:#333; color:white; }
+    video { border-radius:8px; margin:15px 0; width:100%; }
+    h3 { color:#00ff88; border-bottom:2px solid #00ff88; padding-bottom:5px; }
   </style>
 </head>
 <body>
-  <h1>PT Tri Tabarak Jaya</h1>
-  <p>Website sudah online ✅</p>
+
+<header>
+  <img src="https://i.imgur.com/8kL2a9T.jpg" alt="Logo PT Tri Tabarak Jaya">
+  <h1>PT TRI TABARAK JAYA</h1>
+  <p>BERSAMA MEMBANGUN MASA DEPAN</p>
+</header>
+
+<div class="banner">
+  💰 BISA BAYAR DP PAKAI PI NETWORK 💰
+</div>
+
+<!-- HALAMAN KATALOG -->
+<div id="katalog" class="katalog">
   
-  <div class="box">
-    <h2>Bayar DP Sekarang</h2>
-    <input type="text" id="nama" placeholder="Nama Anda">
-    <input type="number" id="nominal" placeholder="Nominal DP">
-    <button onclick="kirimWA()">Bayar via WA Admin</button>
+  <!-- TYPE 36 GUNUNG GANGSIR -->
+  <div class="card">
+    <img src="https://i.imgur.com/qW4pZx1.jpg" alt="Type 36">
+    <div class="card-body">
+      <h2>Gunung Gangsir Type 36</h2>
+      <p>LT 72 | LB 36 | 2KT 1KM</p>
+      <p class="harga">Rp 350 - 500 Juta</p>
+      <button class="btn" onclick="bukaDetail('type36')">Lihat Detail</button>
+      <button class="btn pi" onclick="kirimWA('Gunung Gangsir Type 36')">Bayar DP Pakai PI</button>
+    </div>
   </div>
 
+  <!-- TYPE 45 -->
+  <div class="card">
+    <img src="https://i.imgur.com/mN7bV2c.jpg" alt="Type 45">
+    <div class="card-body">
+      <h2>Gunung Cluster Premium Type 45</h2>
+      <p>LT 90 | LB 45 | 3KT 2KM</p>
+      <p class="harga">Rp 950 Juta - 1.5 Miliar</p>
+      <button class="btn" onclick="bukaDetail('type45')">Lihat Detail</button>
+      <button class="btn pi" onclick="kirimWA('Gunung Cluster Premium Type 45')">Bayar DP Pakai PI</button>
+    </div>
+  </div>
+
+  <!-- PURWOSARI -->
+  <div class="card">
+    <img src="https://i.imgur.com/pL9rK3d.jpg" alt="Purwosari">
+    <div class="card-body">
+      <h2>Purwosari Cluster Premium</h2>
+      <p>LT 90 | LB 45 | 3KT 2KM</p>
+      <p class="harga">Rp 350 Juta - 1.3 Miliar</p>
+      <button class="btn" onclick="bukaDetail('purwosari')">Lihat Detail</button>
+      <button class="btn pi" onclick="kirimWA('Purwosari Cluster Premium')">Bayar DP Pakai PI</button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- HALAMAN DETAIL TYPE 36 -->
+<div id="type36" class="detail">
+  <button class="btn back" onclick="tutupDetail()">← Kembali ke Katalog</button>
+  <h1>Gunung Gangsir Type 36/72</h1>
+  
+  <h3>Galeri Foto</h3>
+  <div class="galeri">
+    <img src="https://i.imgur.com/fT5yH4e.jpg" alt="">
+    <img src="https://i.imgur.com/gH6uJ5f.jpg" alt="">
+    <img src="https://i.imgur.com/hJ7iK6g.jpg" alt="">
+  </div>
+
+  <h3>Video Visual Company</h3>
+  <video controls>
+    <source src="https://i.imgur.com/xY0zA9j.mp4" type="video/mp4">
+  </video>
+
+  <h3>Denah</h3>
+  <img src="https://i.imgur.com/kL9mN8i.jpg" width="100%" style="border-radius:8px;">
+
+  <h3>Spesifikasi & Ukuran</h3>
+  <table>
+    <tr><td>Luas Tanah</td><td>72 m2</td></tr>
+    <tr><td>Luas Bangunan</td><td>36 m2</td></tr>
+    <tr><td>Kamar Tidur</td><td>2</td></tr>
+    <tr><td>Kamar Mandi</td><td>1</td></tr>
+    <tr><td>Carport</td><td>1 Mobil</td></tr>
+    <tr><td>Fondasi</td><td>Batu Kali</td></tr>
+    <tr><td>Dinding</td><td>Bata Merah + Plaster</td></tr>
+    <tr><td>Lantai</td><td>Granit 60x60</td></tr>
+    <tr><td>Atap</td><td>Genteng Metal</td></tr>
+  </table>
+
+  <h3>Fasilitas Perumahan</h3>
+  <img src="https://i.imgur.com/jK8lM7h.jpg" width="100%" style="border-radius:8px;">
+
+  <button class="btn" onclick="kirimWA('Gunung Gangsir Type 36/72')">Tanya & Bayar DP via WA Admin</button>
+</div>
+
+
+<!-- HALAMAN DETAIL TYPE 45 -->
+<div id="type45" class="detail">
+  <button class="btn back" onclick="tutupDetail()">← Kembali ke Katalog</button>
+  <h1>Gunung Cluster Premium Type 45/90</h1>
+  <img src="https://i.imgur.com/mN7bV2c.jpg" width="100%" style="border-radius:8px;">
+  <h3>Spesifikasi</h3>
+  <table>
+    <tr><td>Luas Tanah</td><td>90 m2</td></tr>
+    <tr><td>Luas Bangunan</td><td>45 m2</td></tr>
+    <tr><td>Kamar Tidur</td><td>3</td></tr>
+    <tr><td>Kamar Mandi</td><td>2</td></tr>
+  </table>
+  <button class="btn" onclick="kirimWA('Gunung Cluster Premium Type 45')">Tanya & Bayar DP via WA Admin</button>
+</div>
+
+
+<!-- HALAMAN DETAIL PURWOSARI -->
+<div id="purwosari" class="detail">
+  <button class="btn back" onclick="tutupDetail()">← Kembali ke Katalog</button>
+  <h1>Purwosari Cluster Premium</h1>
+  <img src="https://i.imgur.com/pL9rK3d.jpg" width="100%" style="border-radius:8px;">
+  <h3>Spesifikasi</h3>
+  <table>
+    <tr><td>Luas Tanah</td><td>90 m2</td></tr>
+    <tr><td>Luas Bangunan</td><td>45 m2</td></tr>
+    <tr><td>Kamar Tidur</td><td>3</td></tr>
+    <tr><td>Kamar Mandi</td><td>2</td></tr>
+  </table>
+  <button class="btn" onclick="kirimWA('Purwosari Cluster Premium')">Tanya & Bayar DP via WA Admin</button>
+</div>
+
+
 <script>
-function kirimWA() {
-  let nama = document.getElementById('nama').value;
-  let nominal = document.getElementById('nominal').value;
-  let pesan = `Halo Admin PT Tri Tabarak Jaya%0A%0ANama: ${nama}%0ANominal DP: Rp ${nominal}`;
-  let noWA = "6285105371373"; // INI UDAH NO KAMU
+function bukaDetail(id) {
+  document.getElementById('katalog').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+  window.scrollTo(0,0);
+}
+function tutupDetail() {
+  document.getElementById('katalog').style.display = 'grid';
+  document.querySelectorAll('.detail').forEach(e => e.style.display = 'none');
+}
+function kirimWA(type) {
+  let pesan = `Halo Admin PT Tri Tabarak Jaya%0A%0ASaya tertarik dengan ${type}%0AMohon info cara bayar DP dan PI Network`;
+  let noWA = "6285105371373";
   window.open(`https://wa.me/${noWA}?text=${pesan}`, '_blank');
 }
 </script>
+
 </body>
-</html>
+      </html>
